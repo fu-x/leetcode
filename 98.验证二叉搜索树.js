@@ -17,7 +17,18 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-
+  let arr = [];
+  traversal(root, arr);
+  for(let i=1; i<arr.length; i++){
+    if(arr[i] <= arr[i-1]) return false;
+  }
+  return true;
 };
+function traversal(root, arr){
+  if(!root) return;
+  if(root.left) traversal(root.left, arr);
+  arr.push(root.val);
+  if(root.right) traversal(root.right, arr);
+}
 // @lc code=end
 

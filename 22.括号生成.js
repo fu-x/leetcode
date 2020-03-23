@@ -21,7 +21,7 @@ var generateParenthesis = function(n) {
 function __generate(n, str, stack, arr, cur, max){
   if(n == 0){
     arr.push(str)
-    return;
+    return;        
   }
   if(stack.length == 0){
     let str1 = str + '(';
