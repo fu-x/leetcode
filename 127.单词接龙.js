@@ -16,7 +16,6 @@ var ladderLength = function(beginWord, endWord, wordList) {
   let queue = [beginWord];
   let level = 1;
   while(queue.length){
-    console.log(queue);
     let len = queue.length;
     while(len--){
       let str = queue.shift();
