@@ -36,45 +36,43 @@
 //   return -1
 // };
 // 二分查找目标值
-// var search = function(nums, target) {
-//   if(nums.length == 1)
-//     return target == nums[0] ? 0 : -1;
-//   let left = 0;
-//   let right = nums.length-1;
-//   while(left < right){
-//     console.log(left, right);
-//     let mid = (left + right)>>1;
-//     if(nums[left] < nums[right]){
-//       if(nums[mid] < target) left = mid + 1;
-//       else right = mid;
-//     }else{
-//       if(target > nums[right]){
-//         if(target < nums[mid] || nums[mid] < nums[left]) right = mid - 1;
-//         else if(target > nums[mid]) left = mid + 1;
-//         else return mid;
-//       } else{
-//         if(target > nums[mid] || nums[mid] > nums[right]) left = mid + 1;
-//         else if(target < nums[mid]) right = mid - 1;
-//         else return mid;
-//       }
-//     }
-//     if(nums[left] == target) return left;
-//   }
-//   return -1;
-// };
-// 精简版
 var search = function(nums, target) {
+  if(nums.length == 1)
+    return target == nums[0] ? 0 : -1;
   let left = 0;
   let right = nums.length-1;
   while(left < right){
-    let mid = (left + right) >> 1;
-    console.log(left, mid, right);
-    if(target > nums[mid] && target < nums[0]) left = mid + 1;
-    else if(nums[0] <= nums[mid] && (target > nums[mid] || target < nums[0])) left = mid + 1;
-    else right = mid;
+    let mid = (left + right)>>1;
+    if(nums[left] < nums[right]){
+      if(nums[mid] < target) left = mid + 1;
+      else right = mid;
+    }else{
+      if(target > nums[right]){
+        if(target < nums[mid] || nums[mid] < nums[left]) right = mid - 1;
+        else if(target > nums[mid]) left = mid + 1;
+        else return mid;
+      } else{
+        if(target > nums[mid] || nums[mid] > nums[right]) left = mid + 1;
+        else if(target < nums[mid]) right = mid - 1;
+        else return mid;
+      }
+    }
+    if(nums[left] == target) return left;
   }
-  return left == right && nums[left] == target ? left : -1;
+  return -1;
 };
+// 精简版
+// var search = function(nums, target) {
+//   let left = 0;
+//   let right = nums.length-1;
+//   while(left < right){
+//     let mid = (left + right) >> 1;
+//     if(target > nums[mid] && target < nums[0]) left = mid + 1;
+//     else if(nums[0] <= nums[mid] && (target > nums[mid] || target < nums[0])) left = mid + 1;
+//     else right = mid;
+//   }
+//   return left == right && nums[left] == target ? left : -1;
+// };
 
 // @lc code=end
 
