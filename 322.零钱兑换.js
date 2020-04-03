@@ -11,7 +11,7 @@
  * @return {number}
  */
 var coinChange = function(coins, amount) {
-  let arr = new Array(amount+1.)fill(Infinity);
+  let arr = new Array(amount+1).fill(Infinity);
   arr[0] = 0;
   for(let coin of coins){
     for(let i=1; i<=amount; i++){
