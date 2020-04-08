@@ -31,6 +31,14 @@ var twoSum = function(numbers, target) {
   }
   return [];
 };
-
+// 映射表
+// var twoSum = function(numbers, target) {
+//   let obj = {};
+//   for(let i=0; i<numbers.length; i++){
+//     if(obj[target - numbers[i]] === undefined) obj[numbers[i]] = i;
+//     else return [obj[target - numbers[i]]+1, i+1];
+//   }
+//   return [];
+// };
 // @lc code=end
 

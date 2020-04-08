@@ -20,6 +20,6 @@ var minDistance = function(word1, word2) {
     }
   }
   return arr[word1.length][word2.length];
-};
+}
 // @lc code=end
 

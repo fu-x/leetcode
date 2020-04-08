@@ -19,7 +19,7 @@ var jump = function (nums) {
       end = max;
       count++;
     }
-    if(end > nums.length-1) break;
+    if(end >= nums.length-1) break;
   }
   return count;
 };
