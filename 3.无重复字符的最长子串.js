@@ -25,6 +25,22 @@ var lengthOfLongestSubstring = function (s) {
   }
   return res > nums.length ? res : nums.length;
 };
+// var lengthOfLongestSubstring = function (s) {
+//   if (s.length === 0) return 0;
+//   let max = 0
+//   let map = new Map();
+//   for (let i = 0; i < s.length; i++) {
+//     if (map.has(s[i])) {
+//       max = map.size > max ? map.size : max;
+//       i = map.get(s[i]) + 1;
+//       map.clear();
+//       map.set(s[i], i);
+//     } else {
+//       map.set(s[i], i);
+//     }
+//   }
+//   return max > map.size ? max : map.size;
+// };
 
 // @lc code=end
 

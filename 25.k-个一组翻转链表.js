@@ -39,5 +39,5 @@ var reverseKGroup = function (head, k) {
     last = stack[0];  // 保存尾结点
     stack.pop();  // 尾结点出栈
   }
-};
+}
 // @lc code=end
